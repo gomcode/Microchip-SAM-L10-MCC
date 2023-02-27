@@ -58,11 +58,11 @@ uintptr_t adc_context;
 volatile uint16_t adc_result = 0;
 volatile bool adc_window_det = false;
 
-void adc_cb(ADC_STATUS status, uintptr_t context )
+/*void adc_cb(ADC_STATUS status, uintptr_t context )
 {
     adc_window_det = true;
     adc_result = ADC_ConversionResultGet();
-}
+}*/
 
 // *****************************************************************************
 // *****************************************************************************
@@ -70,32 +70,51 @@ void adc_cb(ADC_STATUS status, uintptr_t context )
 // *****************************************************************************
 // *****************************************************************************
 
+<<<<<<< HEAD
 
+=======
+int TC0_Handler() {
+    return 0;
+}
+
+uint16_t a =0;
+void TC0_Callback_InterruptHandler(TC_TIMER_STATUS status, uintptr_t context) {
+   
+    TC0_Timer16bitCounterSet(65411);
+    a++;
+    DAC_DataWrite(a);
+    adc_result = ADC_ConversionResultGet();
+    putchar(adc_result); 
+    printf("\n\r TC0_Handler running ");
+}
+>>>>>>> DACtoADC
 
 int main ( void )
 {
     /* Initialize all modules */
     SYS_Initialize ( NULL );
-    RTC_Timer16Start();
+
     
-    printf("\n\r---------------------------------------------------------");
-    printf("\n\r                    ADC Window Sleepwalking Demo                 ");
-    printf("\n\r---------------------------------------------------------\n\r");
-    
-    ADC_CallbackRegister(adc_cb, adc_context);
+    printf("\n\r SYS_Initialize Completed ");
+
     ADC_Enable();
     ADC_ConversionStart();
-    printf("\r\nConnect input signal to the configured ADC pin\r\n");
-    long a =0;
-    RTC_Timer16InterruptEnable(TAMPER_CHANNEL_0);
-    RTC_Timer16CounterSet (65411);
+//    ADC_CallbackRegister(adc_cb, adc_context);
+    
+    __enable_irq();
+
+
+    TC0_TimerCallbackRegister(TC0_Callback_InterruptHandler, (uintptr_t)NULL);
+    TC0_Timer16bitCounterSet(65411);
+    TC0_TimerStart();
+    
+
+    
+        printf("\n\r Initialize Completed ");
     while ( true )
     {
        // PM_StandbyModeEnter();
-        a++;
-        DAC_DataWrite(a);
-        adc_result = ADC_ConversionResultGet();
-        putchar(adc_result);
+
         //putchar(a);
         //printf("\r\nADC Window detected \r\n");
         //printf("\r\nADC result is %d\r\n", adc_result);

@@ -61,7 +61,11 @@ void Reset_Handler (void);
 void NonMaskableInt_Handler (void);
 void HardFault_Handler (void);
 void RTC_InterruptHandler (void);
+<<<<<<< HEAD
 void TC0_TimerInterruptHandler (void);
+=======
+void TC0_Handler (void);
+>>>>>>> DACtoADC
 void ADC_OTHER_InterruptHandler (void);
 
 
