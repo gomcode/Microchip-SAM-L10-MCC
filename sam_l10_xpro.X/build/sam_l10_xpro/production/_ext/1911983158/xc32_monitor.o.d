@@ -76,9 +76,9 @@ build/sam_l10_xpro/production/_ext/1911983158/xc32_monitor.o: \
  ../src/config/sam_l10_xpro/device.h \
  ../src/config/sam_l10_xpro/toolchain_specifics.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h \
+ ../src/config/sam_l10_xpro/peripheral/evsys/plib_evsys.h \
  ../src/config/sam_l10_xpro/peripheral/sercom/usart/plib_sercom0_usart.h \
  ../src/config/sam_l10_xpro/peripheral/sercom/usart/plib_sercom_usart_common.h \
- ../src/config/sam_l10_xpro/peripheral/evsys/plib_evsys.h \
  ../src/config/sam_l10_xpro/peripheral/port/plib_port.h \
  ../src/config/sam_l10_xpro/peripheral/clock/plib_clock.h \
  ../src/config/sam_l10_xpro/peripheral/nvic/plib_nvic.h \
@@ -86,6 +86,8 @@ build/sam_l10_xpro/production/_ext/1911983158/xc32_monitor.o: \
  ../src/config/sam_l10_xpro/peripheral/adc/plib_adc.h \
  ../src/config/sam_l10_xpro/peripheral/adc/plib_adc_common.h \
  ../src/config/sam_l10_xpro/peripheral/rtc/plib_rtc.h \
+ ../src/config/sam_l10_xpro/peripheral/tc/plib_tc0.h \
+ ../src/config/sam_l10_xpro/peripheral/tc/plib_tc_common.h \
  ../src/config/sam_l10_xpro/peripheral/dac/plib_dac.h
 
 ../src/config/sam_l10_xpro/definitions.h:
@@ -240,11 +242,11 @@ build/sam_l10_xpro/production/_ext/1911983158/xc32_monitor.o: \
 
 ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h:
 
+../src/config/sam_l10_xpro/peripheral/evsys/plib_evsys.h:
+
 ../src/config/sam_l10_xpro/peripheral/sercom/usart/plib_sercom0_usart.h:
 
 ../src/config/sam_l10_xpro/peripheral/sercom/usart/plib_sercom_usart_common.h:
-
-../src/config/sam_l10_xpro/peripheral/evsys/plib_evsys.h:
 
 ../src/config/sam_l10_xpro/peripheral/port/plib_port.h:
 
@@ -259,5 +261,9 @@ build/sam_l10_xpro/production/_ext/1911983158/xc32_monitor.o: \
 ../src/config/sam_l10_xpro/peripheral/adc/plib_adc_common.h:
 
 ../src/config/sam_l10_xpro/peripheral/rtc/plib_rtc.h:
+
+../src/config/sam_l10_xpro/peripheral/tc/plib_tc0.h:
+
+../src/config/sam_l10_xpro/peripheral/tc/plib_tc_common.h:
 
 ../src/config/sam_l10_xpro/peripheral/dac/plib_dac.h:
