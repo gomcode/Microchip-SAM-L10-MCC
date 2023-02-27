@@ -86,9 +86,6 @@ void RTC_Initialize(void)
         /* Wait for Synchronization after writing Counter Period */
     }
 
-    RTC_REGS->MODE1.RTC_INTENSET = 0x8000U;
-
-    RTC_REGS->MODE1.RTC_EVCTRL = 0x8000U;
 }
 
 
