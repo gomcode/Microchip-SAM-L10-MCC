@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/HardwareWorks/Works/L10XP/adc_window_sleepwalking/firmware/src/main.c</file>
+            <file>file:/C:/HardwareWorks/Works/L10XP/adc_window_sleepwalking/firmware/sam_l10_xpro.X/nbproject/Makefile-sam_l10_xpro.mk</file>
+            <file>file:/C:/HardwareWorks/Works/L10XP/adc_window_sleepwalking/firmware/src/config/sam_l10_xpro/peripheral/adc/plib_adc.c</file>
+            <file>file:/C:/HardwareWorks/Works/L10XP/adc_window_sleepwalking/firmware/src/packs/ATSAML10E16A_DFP/component/rtc.h</file>
+            <file>file:/C:/HardwareWorks/Works/L10XP/adc_window_sleepwalking/firmware/src/config/sam_l10_xpro/peripheral/rtc/plib_rtc.h</file>
+            <file>file:/C:/HardwareWorks/Works/L10XP/adc_window_sleepwalking/firmware/src/config/sam_l10_xpro/peripheral/dac/plib_dac.c</file>
+            <file>file:/C:/HardwareWorks/Works/L10XP/adc_window_sleepwalking/firmware/src/config/sam_l10_xpro/initialization.c</file>
+            <file>file:/C:/HardwareWorks/Works/L10XP/adc_window_sleepwalking/firmware/src/config/sam_l10_xpro/peripheral/rtc/plib_rtc_timer.c</file>
+        </group>
+    </open-files>
+</project-private>
