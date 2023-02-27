@@ -103,7 +103,7 @@ void ADC_Initialize( void )
     ADC_REGS->ADC_INPUTCTRL = (uint16_t) ADC_POSINPUT_AIN3;
 
     /* Resolution & Operation Mode */
-    ADC_REGS->ADC_CTRLC = (uint16_t)(ADC_CTRLC_RESSEL_8BIT | ADC_CTRLC_WINMODE(2UL) );
+    ADC_REGS->ADC_CTRLC = (uint16_t)(ADC_CTRLC_RESSEL_12BIT | ADC_CTRLC_WINMODE(1UL) );
 
 
     /* Upper threshold for window mode  */
@@ -114,10 +114,7 @@ void ADC_Initialize( void )
     ADC_REGS->ADC_INTFLAG = (uint8_t)ADC_INTFLAG_Msk;
     /* Enable interrupts */
     ADC_REGS->ADC_INTENSET = (uint8_t)(ADC_INTENSET_WINMON_Msk);
-    /* Events configuration  */
-    ADC_REGS->ADC_EVCTRL = (uint8_t)(ADC_EVCTRL_STARTEI_Msk);
 
-    ADC_REGS->ADC_CTRLA |= (uint8_t)(ADC_CTRLA_RUNSTDBY_Msk);
     while(0U != ADC_REGS->ADC_SYNCBUSY)
     {
         /* Wait for Synchronization */

@@ -98,6 +98,7 @@ void TC0_TimerInitialize( void )
     /* Enable interrupt*/
     TC0_REGS->COUNT16.TC_INTENSET = (uint8_t)(TC_INTENSET_OVF_Msk);
 
+    TC0_REGS->COUNT16.TC_EVCTRL = (uint16_t)(TC_EVCTRL_OVFEO_Msk);
 
     while((TC0_REGS->COUNT16.TC_SYNCBUSY) != 0U)
     {

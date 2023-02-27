@@ -71,31 +71,61 @@ void adc_cb(ADC_STATUS status, uintptr_t context )
 // *****************************************************************************
 
 
+uint16_t a =2000;
+/*
+void TC0_Callback_InterruptHandler(TC_TIMER_STATUS status, uintptr_t context)
+{
+    count++;
+    if(count>1000){
+        a++;
+        LED_Toggle();
+        DAC_DataWrite(a);
+        adc_result = ADC_ConversionResultGet();
+        count = 0;
+    }
+        putchar(a); 
+}
+ */
+ void TC0_Callback_InterruptHandler(TC_TIMER_STATUS status, uintptr_t context) {
+   
+    TC0_Timer16bitCounterSet(65411);
+
+        /* Toggle LED */
+        LED_Toggle();
+       // a++;
+
+    DAC_DataWrite(a);
+    adc_result = ADC_ConversionResultGet();
+    putchar((int)adc_result); 
+    //printf("\r\nADC result is %d\r\n", a);
+}
+
 
 int main ( void )
 {
     /* Initialize all modules */
     SYS_Initialize ( NULL );
     RTC_Timer16Start();
+        
+    __enable_irq();
+
+    TC0_Timer16bitCounterSet(65411);
+    TC0_TimerStart();
+    TC0_TimerCallbackRegister(TC0_Callback_InterruptHandler, (uintptr_t)NULL);
     
     printf("\n\r---------------------------------------------------------");
-    printf("\n\r                    ADC Window Sleepwalking Demo                 ");
-    printf("\n\r---------------------------------------------------------\n\r");
-    
-    ADC_CallbackRegister(adc_cb, adc_context);
+    printf("\n\r               Initialize Completed ");
     ADC_Enable();
     ADC_ConversionStart();
-    printf("\r\nConnect input signal to the configured ADC pin\r\n");
-    long a =0;
-    RTC_Timer16InterruptEnable(TAMPER_CHANNEL_0);
-    RTC_Timer16CounterSet (65411);
+
+    printf("\n\r                  ADC Initialized ");    
     while ( true )
     {
        // PM_StandbyModeEnter();
         a++;
         DAC_DataWrite(a);
         adc_result = ADC_ConversionResultGet();
-        putchar(adc_result);
+        putchar((int)adc_result);
         //putchar(a);
         //printf("\r\nADC Window detected \r\n");
         //printf("\r\nADC result is %d\r\n", adc_result);
