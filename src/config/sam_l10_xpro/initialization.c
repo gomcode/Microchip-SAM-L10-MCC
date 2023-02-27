@@ -163,13 +163,15 @@ void SYS_Initialize ( void* data )
 
     NVMCTRL_Initialize();
 
-    SERCOM0_USART_Initialize();
-
     EVSYS_Initialize();
+
+    SERCOM0_USART_Initialize();
 
 
     ADC_Initialize();
     RTC_Initialize();
+
+    TC0_TimerInitialize();
 
     DAC_Initialize();
 
